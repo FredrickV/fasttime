@@ -16,33 +16,33 @@
 #include <windows.h>
 
 typedef struct {
-	LARGE_INTEGER startTime;
-	LARGE_INTEGER freq;
+    LARGE_INTEGER startTime;
+    LARGE_INTEGER freq;
 }ftime_t;
 
 // Initializes and sets the time. Call ftReset for further rounds
 inline ftime_t ftInit() {
-	ftime_t t;
-	QueryPerformanceFrequency(&t.freq);
-	QueryPerformanceCounter(&t.startTime);
-	return t;
+    ftime_t t;
+    QueryPerformanceFrequency(&t.freq);
+    QueryPerformanceCounter(&t.startTime);
+    return t;
 }
 
 // Variant 2
 inline void ftInit(ftime_t &t) {
-	QueryPerformanceFrequency(&t.freq);
-	QueryPerformanceCounter(&t.startTime);
+    QueryPerformanceFrequency(&t.freq);
+    QueryPerformanceCounter(&t.startTime);
 }
 
 // Note, ftInit must be called once
 inline void ftReset(ftime_t &t) {
-	QueryPerformanceCounter(&t.startTime);
+    QueryPerformanceCounter(&t.startTime);
 }
 
 inline int64_t ftElapsed(const ftime_t &t) {
-	LARGE_INTEGER now;
-	QueryPerformanceCounter(&now);
-	return ((now.QuadPart - t.startTime.QuadPart) * 1000) / t.freq.QuadPart;
+    LARGE_INTEGER now;
+    QueryPerformanceCounter(&now);
+    return ((now.QuadPart - t.startTime.QuadPart) * 1000) / t.freq.QuadPart;
 }
 #endif // _WINDOWS
 
