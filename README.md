@@ -7,15 +7,18 @@ License: Public domain
 C/C++ fast clock timer for game engines
 
 Benchmark code:
-`
-	auto timeBench = ftInit();
+```c
+auto timeBench = ftInit();
 
-	int rounds = 0;
-	while (ftElapsed(timeBench) < 1000) {
-		++rounds;
-	}
-	printf("Benchmark time rounds: %d\n", rounds);
-`
+int rounds = 0;
+while (ftElapsed(timeBench) < 1000) {
+	++rounds;
+}
+
+printf("Benchmark time rounds: %d\n", rounds);
+```
+
+
 Benchmark results:
 
 Benchmark time rounds: 42412263
