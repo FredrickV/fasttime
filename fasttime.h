@@ -3,7 +3,7 @@
 * Purpose:    Fast clock timer for game engines
 * Author:     Fredrick Vamstad
 * Created:    2018 - August
-* License:	  Public domain
+* License:    Public domain
 ****************************************************************/
 
 #ifndef FAST_TIME_H
