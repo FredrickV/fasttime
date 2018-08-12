@@ -7,7 +7,7 @@ License: Public domain
 C/C++ fast clock timer for game engines
 
 Benchmark code:
-'
+`
 	auto timeBench = ftInit();
 
 	int rounds = 0;
@@ -15,7 +15,7 @@ Benchmark code:
 		++rounds;
 	}
 	printf("Benchmark time rounds: %d\n", rounds);
-'
+`
 Benchmark results:
 
 Benchmark time rounds: 42412263
